@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Upload a New Note</h2>
+
+<form method="post" enctype="multipart/form-data" class="mb-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Upload</button>
+    <a href="{% url 'home' %}" class="btn btn-secondary ms-2">Back</a>
+</form>
+{% endblock %}
